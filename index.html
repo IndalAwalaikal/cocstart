@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Cocstart - Membangun masa depan teknologi Indonesia melalui inovasi dan kolaborasi" />
+    <meta name="keywords" content="teknologi, inovasi, startup, Indonesia, programming, workshop" />
+    <meta name="author" content="Coconut Team" />
+    <meta name="theme-color" content="#3B82F6" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://cocstart.id/" />
+    <meta property="og:title" content="Cocstart - Platform Inovasi Teknologi" />
+    <meta property="og:description" content="Membangun masa depan teknologi Indonesia melalui inovasi dan kolaborasi" />
+    <meta property="og:image" content="/og-image.jpg" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://cocstart.id/" />
+    <meta property="twitter:title" content="Cocstart - Platform Inovasi Teknologi" />
+    <meta property="twitter:description" content="Membangun masa depan teknologi Indonesia melalui inovasi dan kolaborasi" />
+    <meta property="twitter:image" content="/twitter-image.jpg" />
+
+    <title>Cocstart - Platform Inovasi Teknologi Indonesia</title>
+    
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    
+    <!-- Apple Touch Icon -->
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    
+    <!-- Manifest -->
+    <link rel="manifest" href="/manifest.json" />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Framer Motion -->
+    <script src="https://cdn.jsdelivr.net/npm/framer-motion@10/dist/framer-motion.min.js"></script>
+    
+    <!-- Heroicons -->
+    <script src="https://cdn.jsdelivr.net/npm/@heroicons/react@2.0.18/24/outline.js"></script>
+    
+    <!-- Tailwind Configuration -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'primary-blue': '#3B82F6',
+              'secondary-gray': '#4B5563',
+              'success-green': '#10B981',
+              'error-red': '#EF4444',
+              'warning-yellow': '#F59E0B',
+              'purple-custom': '#8B5CF6',
+              'indigo-custom': '#6366F1',
+              'pink-custom': '#EC4899',
+              'teal-custom': '#14B8A6',
+            },
+            fontFamily: {
+              inter: ['Inter', 'sans-serif'],
+            },
+            animation: {
+              'fade-in': 'fadeIn 0.5s ease-in-out',
+              'fade-in-up': 'fadeInUp 0.5s ease-out',
+              'fade-in-down': 'fadeInDown 0.5s ease-out',
+              'fade-in-left': 'fadeInLeft 0.5s ease-out',
+              'fade-in-right': 'fadeInRight 0.5s ease-out',
+              'slide-up': 'slideUp 0.3s ease-out',
+              'slide-down': 'slideDown 0.3s ease-out',
+              'scale-in': 'scaleIn 0.2s ease-out',
+              'scale-out': 'scaleOut 0.2s ease-in',
+              'bounce-in': 'bounceIn 0.6s ease-out',
+              'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+              'spin-slow': 'spin 3s linear infinite',
+              'ping-slow': 'ping 2s cubic-bezier(0, 0, 0.2, 1) infinite',
+              'float': 'float 6s ease-in-out infinite',
+              'glow': 'glow 2s ease-in-out infinite alternate',
+              'shimmer': 'shimmer 2s linear infinite',
+              'gradient-x': 'gradient-x 15s ease infinite',
+              'gradient-y': 'gradient-y 15s ease infinite',
+              'gradient-xy': 'gradient-xy 15s ease infinite',
+            },
+            keyframes: {
+              fadeIn: {
+                '0%': { opacity: '0' },
+                '100%': { opacity: '1' },
+              },
+              fadeInUp: {
+                '0%': { opacity: '0', transform: 'translateY(30px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              },
+              fadeInDown: {
+                '0%': { opacity: '0', transform: 'translateY(-30px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              },
+              fadeInLeft: {
+                '0%': { opacity: '0', transform: 'translateX(-30px)' },
+                '100%': { opacity: '1', transform: 'translateX(0)' },
+              },
+              fadeInRight: {
+                '0%': { opacity: '0', transform: 'translateX(30px)' },
+                '100%': { opacity: '1', transform: 'translateX(0)' },
+              },
+              slideUp: {
+                '0%': { transform: 'translateY(100%)' },
+                '100%': { transform: 'translateY(0)' },
+              },
+              slideDown: {
+                '0%': { transform: 'translateY(-100%)' },
+                '100%': { transform: 'translateY(0)' },
+              },
+              scaleIn: {
+                '0%': { transform: 'scale(0.9)', opacity: '0' },
+                '100%': { transform: 'scale(1)', opacity: '1' },
+              },
+              scaleOut: {
+                '0%': { transform: 'scale(1)', opacity: '1' },
+                '100%': { transform: 'scale(0.9)', opacity: '0' },
+              },
+              bounceIn: {
+                '0%': { transform: 'scale(0.3)', opacity: '0' },
+                '50%': { transform: 'scale(1.05)' },
+                '70%': { transform: 'scale(0.9)' },
+                '100%': { transform: 'scale(1)', opacity: '1' },
+              },
+              float: {
+                '0%, 100%': { transform: 'translateY(0px)' },
+                '50%': { transform: 'translateY(-20px)' },
+              },
+              glow: {
+                '0%': { boxShadow: '0 0 5px rgba(59, 130, 246, 0.5)' },
+                '100%': { boxShadow: '0 0 20px rgba(59, 130, 246, 1), 0 0 30px rgba(59, 130, 246, 0.5)' },
+              },
+              shimmer: {
+                '0%': { backgroundPosition: '-200px 0' },
+                '100%': { backgroundPosition: 'calc(200px + 100%) 0' },
+              },
+              'gradient-y': {
+                '0%, 100%': { 'background-position': '0% 50%' },
+                '50%': { 'background-position': '0% 100%' },
+              },
+              'gradient-x': {
+                '0%, 100%': { 'background-position': '0% 50%' },
+                '50%': { 'background-position': '100% 50%' },
+              },
+              'gradient-xy': {
+                '0%, 100%': { 'background-position': '0% 50%' },
+                '25%': { 'background-position': '100% 50%' },
+                '50%': { 'background-position': '100% 100%' },
+                '75%': { 'background-position': '0% 100%' },
+              },
+            },
+            backdropBlur: {
+              xs: '2px',
+            },
+            backgroundImage: {
+              'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+              'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+              'mesh-gradient': 'radial-gradient(circle at 25px 25px, rgba(59, 130, 246, 0.1) 2px, transparent 0), radial-gradient(circle at 75px 75px, rgba(139, 92, 246, 0.1) 2px, transparent 0)',
+            },
+            backgroundSize: {
+              'mesh': '100px 100px',
+            },
+            boxShadow: {
+              'glow': '0 0 20px rgba(59, 130, 246, 0.5)',
+              'glow-lg': '0 0 40px rgba(59, 130, 246, 0.6)',
+              'inner-lg': 'inset 0 2px 4px 0 rgba(0, 0, 0, 0.1)',
+              'colored': '0 10px 25px -5px rgba(59, 130, 246, 0.1), 0 10px 10px -5px rgba(59, 130, 246, 0.04)',
+            },
+            blur: {
+              xs: '2px',
+            },
+            scale: {
+              '102': '1.02',
+              '103': '1.03',
+            },
+            zIndex: {
+              '60': '60',
+              '70': '70',
+              '80': '80',
+              '90': '90',
+              '100': '100',
+            },
+            spacing: {
+              '18': '4.5rem',
+              '88': '22rem',
+              '128': '32rem',
+            },
+            borderRadius: {
+              '4xl': '2rem',
+              '5xl': '2.5rem',
+            },
+            fontSize: {
+              '2xs': ['0.625rem', { lineHeight: '0.75rem' }],
+            },
+            lineHeight: {
+              'extra-loose': '2.5',
+              '12': '3rem',
+            },
+            letterSpacing: {
+              'extra-wide': '0.2em',
+            },
+          },
+        },
+        plugins: [
+          // Custom utilities can be added here
+        ],
+      };
+    </script>
+
+    <!-- Custom Styles -->
+    <style>
+      /* Loading screen */
+      #loading-screen {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+        transition: opacity 0.5s ease-out;
+      }
+
+      #loading-screen.fade-out {
+        opacity: 0;
+        pointer-events: none;
+      }
+
+      .loading-logo {
+        font-size: 2rem;
+        font-weight: bold;
+        color: white;
+        animation: pulse 2s ease-in-out infinite;
+      }
+
+      /* Scroll to top button */
+      #scroll-to-top {
+        position: fixed;
+        bottom: 2rem;
+        right: 2rem;
+        width: 3rem;
+        height: 3rem;
+        background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+        color: white;
+        border: none;
+        border-radius: 50%;
+        cursor: pointer;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        z-index: 1000;
+        box-shadow: 0 4px 20px rgba(59, 130, 246, 0.3);
+      }
+
+      #scroll-to-top.visible {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      #scroll-to-top:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(59, 130, 246, 0.4);
+      }
+
+      /* Custom scrollbar */
+      body::-webkit-scrollbar {
+        width: 8px;
+      }
+
+      body::-webkit-scrollbar-track {
+        background: #f1f5f9;
+      }
+
+      body::-webkit-scrollbar-thumb {
+        background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+        border-radius: 4px;
+      }
+
+      body::-webkit-scrollbar-thumb:hover {
+        background: linear-gradient(135deg, #2563eb, #7c3aed);
+      }
+
+      /* Smooth focus outline */
+      *:focus-visible {
+        outline: 2px solid #3b82f6;
+        outline-offset: 2px;
+        border-radius: 4px;
+      }
+
+      /* Selection styling */
+      ::selection {
+        background: rgba(59, 130, 246, 0.2);
+        color: #1e40af;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Loading Screen -->
+    <div id="loading-screen">
+      <div class="loading-logo">
+        <svg class="w-16 h-16 mb-4 animate-spin" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+        </svg>
+        <div>Cocstart</div>
+      </div>
+    </div>
+
+    <!-- Scroll to Top Button -->
+    <button id="scroll-to-top" aria-label="Scroll to top">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+      </svg>
+    </button>
+
+    <!-- Main App Container -->
+    <div id="root"></div>
+
+    <!-- Background Particles -->
+    <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+    </div>
+
+    <!-- Scripts -->
+    <script>
+      // Loading screen handler
+      window.addEventListener('load', function() {
+        const loadingScreen = document.getElementById('loading-screen');
+        setTimeout(() => {
+          loadingScreen.classList.add('fade-out');
+          setTimeout(() => {
+            loadingScreen.style.display = 'none';
+          }, 500);
+        }, 1000);
+      });
+
+      // Scroll to top functionality
+      const scrollToTop = document.getElementById('scroll-to-top');
+      
+      window.addEventListener('scroll', function() {
+        if (window.pageYOffset > 300) {
+          scrollToTop.classList.add('visible');
+        } else {
+          scrollToTop.classList.remove('visible');
+        }
+      });
+
+      scrollToTop.addEventListener('click', function() {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      });
+
+      // Performance optimization: Intersection Observer for animations
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animate-fade-in-up');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, observerOptions);
+
+      // Observe elements when DOM is ready
+      document.addEventListener('DOMContentLoaded', function() {
+        const animateElements = document.querySelectorAll('.animate-on-scroll');
+        animateElements.forEach(el => observer.observe(el));
+      });
+
+      // Service Worker registration (for PWA support)
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function() {
+          navigator.serviceWorker.register('/sw.js')
+            .then(function(registration) {
+              console.log('ServiceWorker registration successful');
+            })
+            .catch(function(error) {
+              console.log('ServiceWorker registration failed');
+            });
+        });
+      }
+
+      // Enhanced error handling
+      window.addEventListener('error', function(e) {
+        console.error('Global error:', e.error);
+        // You can send error reports to your analytics service here
+      });
+
+      // Performance monitoring
+      window.addEventListener('load', function() {
+        // Log performance metrics
+        setTimeout(() => {
+          const perfData = performance.getEntriesByType('navigation')[0];
+          console.log('Page load time:', perfData.loadEventEnd - perfData.loadEventStart);
+        }, 0);
+      });
+
+      // Smooth scrolling for anchor links
+      document.addEventListener('click', function(e) {
+        if (e.target.matches('a[href^="#"]')) {
+          e.preventDefault();
+          const target = document.querySelector(e.target.getAttribute('href'));
+          if (target) {
+            target.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+          }
+        }
+      });
+
+      // Keyboard navigation improvements
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Tab') {
+          document.body.classList.add('keyboard-navigation');
+        }
+      });
+
+      document.addEventListener('mousedown', function() {
+        document.body.classList.remove('keyboard-navigation');
+      });
+
+      // Dynamic theme detection
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+      
+      function updateTheme(e) {
+        if (e.matches) {
+          document.documentElement.classList.add('dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+        }
+      }
+      
+      prefersDark.addListener(updateTheme);
+      updateTheme(prefersDark);
+
+      // Preload critical resources
+      const preloadLinks = [
+        { href: '/fonts/inter-v12-latin-regular.woff2', as: 'font', type: 'font/woff2' },
+        { href: '/fonts/inter-v12-latin-600.woff2', as: 'font', type: 'font/woff2' },
+        { href: '/fonts/inter-v12-latin-700.woff2', as: 'font', type: 'font/woff2' },
+      ];
+
+      preloadLinks.forEach(link => {
+        const linkElement = document.createElement('link');
+        linkElement.rel = 'preload';
+        linkElement.href = link.href;
+        linkElement.as = link.as;
+        if (link.type) linkElement.type = link.type;
+        linkElement.crossOrigin = 'anonymous';
+        document.head.appendChild(linkElement);
+      });
+
+      // Analytics and tracking (placeholder)
+      function trackEvent(eventName, properties = {}) {
+        // Replace with your analytics service
+        console.log('Event tracked:', eventName, properties);
+      }
+
+      // Track page views
+      trackEvent('page_view', {
+        page: window.location.pathname,
+        title: document.title
+      });
+
+      // Mobile viewport height fix
+      function setVH() {
+        const vh = window.innerHeight * 0.01;
+        document.documentElement.style.setProperty('--vh', `${vh}px`);
+      }
+
+      setVH();
+      window.addEventListener('resize', setVH);
+      window.addEventListener('orientationchange', setVH);
+
+      // Progressive image loading
+      function loadImages() {
+        const images = document.querySelectorAll('img[data-src]');
+        const imageObserver = new IntersectionObserver((entries, observer) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              const img = entry.target;
+              img.src = img.dataset.src;
+              img.classList.remove('lazy');
+              imageObserver.unobserve(img);
+            }
+          });
+        });
+
+        images.forEach(img => imageObserver.observe(img));
+      }
+
+      document.addEventListener('DOMContentLoaded', loadImages);
+
+      // Network status detection
+      function updateOnlineStatus() {
+        const status = navigator.onLine ? 'online' : 'offline';
+        document.body.classList.toggle('offline', !navigator.onLine);
+        
+        if (!navigator.onLine) {
+          // Show offline notification
+          console.log('You are offline');
+        }
+      }
+
+      window.addEventListener('online', updateOnlineStatus);
+      window.addEventListener('offline', updateOnlineStatus);
+      updateOnlineStatus();
+
+      // Memory usage monitoring (if available)
+      if ('memory' in performance) {
+        setInterval(() => {
+          const memory = performance.memory;
+          console.log('Memory usage:', {
+            used: Math.round(memory.usedJSHeapSize / 1024 / 1024) + ' MB',
+            total: Math.round(memory.totalJSHeapSize / 1024 / 1024) + ' MB',
+            limit: Math.round(memory.jsHeapSizeLimit / 1024 / 1024) + ' MB'
+          });
+        }, 30000); // Log every 30 seconds
+      }
+    </script>
+
+    <!-- React Module Script -->
+    <script type="module" src="/src/main.tsx"></script>
+
+    <!-- Fallback for users with JavaScript disabled -->
+    <noscript>
+      <div style="
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #1e40af;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        font-family: Inter, sans-serif;
+        z-index: 10000;
+        text-align: center;
+        padding: 2rem;
+      ">
+        <h1 style="font-size: 2rem; margin-bottom: 1rem;">Cocstart</h1>
+        <p style="font-size: 1.1rem; margin-bottom: 2rem;">
+          Untuk pengalaman terbaik, silakan aktifkan JavaScript di browser Anda.
+        </p>
+        <p style="color: #93c5fd;">
+          JavaScript diperlukan untuk menjalankan aplikasi ini.
+        </p>
+      </div>
+    </noscript>
+  </body>
+</html>
