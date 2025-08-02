@@ -1,4 +1,3 @@
-```markdown
 # Cocstart
 
 Sebuah aplikasi web pendaftaran modern yang dibangun menggunakan teknologi web terkini untuk memberikan pengalaman pendaftaran yang lancar dan responsif.
@@ -31,7 +30,7 @@ Sebuah aplikasi web pendaftaran modern yang dibangun menggunakan teknologi web t
 ```bash
 git clone <repository-url>
 cd cocstart
-```
+
 
 2. Install dependencies:
 ```bash
